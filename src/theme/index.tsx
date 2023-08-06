@@ -4,7 +4,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { createTheme, ThemeProvider as MuiThemeProvider } from '@mui/material/styles';
 import orange from '@mui/material/colors/orange';
 import { ReactNode } from 'react';
-
+import {palette} from './palette';
 interface ThemeProviderProps {
   children: ReactNode;
 }
@@ -23,36 +23,11 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
   );
 
   const theme = React.useMemo(() => {
-    const lightPalette = {
-      mode: 'light',
-      primary: {
-        main: '#6200ea',
-      },
-      secondary: {
-        main: '#f50057',
-      },
-      status: {
-        danger: orange[500],
-      },
-    };
-
-    const darkPalette = {
-      mode: 'dark',
-      primary: {
-        main: '#6200ea',
-      },
-      secondary: {
-        main: '#f50057',
-      },
-      status: {
-        danger: orange[500],
-      },
-    };
-
+  
     return createTheme({
         palette: {
           mode: mode,
-          ...(mode === 'light' ? lightPalette : darkPalette),
+          ...(mode === 'light' ? palette("light")  : palette("dark")),
         },
       });
       

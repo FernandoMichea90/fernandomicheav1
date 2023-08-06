@@ -14,6 +14,8 @@ import Brightness7Icon from '@mui/icons-material/Brightness7';
 import { useTheme, ThemeProvider, createTheme } from '@mui/material/styles';
 import IconButton from '@mui/material/IconButton';
 import { ColorModeContext } from '../../theme';
+import Typography from '@mui/material/Typography';
+import { bgBlur } from '@/theme/css';
 
 
 
@@ -29,7 +31,19 @@ export default function HeaderApp() {
     return (
         <AppBar>
             <Toolbar
-                disableGutters
+                sx={{
+                    transition: theme.transitions.create(['height'], {
+                        easing: theme.transitions.easing.easeInOut,
+                        duration: theme.transitions.duration.shorter,
+                      }),
+                    ...bgBlur({
+                        color: theme.palette.background.default,
+                    }),
+                    color: theme.palette.text.primary,
+
+
+                }}
+                
             >
                 <Container sx={{ height: 1, display: 'flex', alignItems: 'center' }}>
                     <Badge
@@ -41,11 +55,13 @@ export default function HeaderApp() {
                                 underline="none"
                                 sx={{ ml: 1 }}
                             >
-                                3
+                                
                             </Link>
                         }
                     >
-                        FM
+                        <Typography  variant="h6" component="div" sx={{ flexGrow: 1 }}>
+                            FM
+                        </Typography>
                     </Badge>
                     <Box
                         sx={{
