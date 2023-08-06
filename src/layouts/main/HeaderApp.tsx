@@ -16,6 +16,8 @@ import IconButton from '@mui/material/IconButton';
 import { ColorModeContext } from '../../theme';
 import Typography from '@mui/material/Typography';
 import { bgBlur } from '@/theme/css';
+import { useResponsive } from '../../hooks/use-responsive';
+import styles from '../../app/page.module.css'
 
 
 
@@ -27,6 +29,7 @@ export default function HeaderApp() {
     //   const theme = useTheme();
     const theme = useTheme();
     const colorMode = React.useContext(ColorModeContext);
+    const mdUp = useResponsive('up', 'md');
 
     return (
         <AppBar>
@@ -35,7 +38,7 @@ export default function HeaderApp() {
                     transition: theme.transitions.create(['height'], {
                         easing: theme.transitions.easing.easeInOut,
                         duration: theme.transitions.duration.shorter,
-                      }),
+                    }),
                     ...bgBlur({
                         color: theme.palette.background.default,
                     }),
@@ -43,7 +46,7 @@ export default function HeaderApp() {
 
 
                 }}
-                
+
             >
                 <Container sx={{ height: 1, display: 'flex', alignItems: 'center' }}>
                     <Badge
@@ -55,13 +58,12 @@ export default function HeaderApp() {
                                 underline="none"
                                 sx={{ ml: 1 }}
                             >
-                                
+
                             </Link>
                         }
-                    >
-                        <Typography  variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                            FM
-                        </Typography>
+                    >   <div className={styles.description}>
+                            [FM]
+                        </div>
                     </Badge>
                     <Box
                         sx={{
@@ -72,14 +74,25 @@ export default function HeaderApp() {
 
                     </Box>
                     <Box sx={{ flexGrow: 1 }} />
+                    <Stack component="nav" direction="row" spacing={5} sx={{ mr: 2.5, height: 1 }}>
+                        <Button  sx={{ color: theme.palette.text.primary }}>
+                            About
+                        </Button>
+                        <Button  sx={{ color: theme.palette.text.primary }}>
+                            Portafolio
+                        </Button>
+
+                        <Button  sx={{ color: theme.palette.text.primary }}>
+                            Contacto
+                        </Button>
+
+                    </Stack>
                     <Stack alignItems="center" direction={{ xs: 'row', md: 'row-reverse' }}>
                         {/* {theme.palette.mode} mode */}
                         <IconButton sx={{ ml: 1 }} onClick={colorMode.toggleColorMode} color="inherit">
                             {theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
                         </IconButton>
-                        <Button variant="contained" target="_blank" rel="noopener" href="#">
-                            Purchase Now
-                        </Button>
+                       
 
                     </Stack>
                 </Container>
