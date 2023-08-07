@@ -1,4 +1,5 @@
-// import { m, useScroll } from 'framer-motion';
+"use client"
+import { m, useScroll } from 'framer-motion';
 import { useEffect, useRef, useState, useCallback } from 'react';
 // @mui
 import { styled, alpha, useTheme } from '@mui/material/styles';
@@ -10,27 +11,27 @@ import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Unstable_Grid2';
 import Typography from '@mui/material/Typography';
-// // routes
-// import { paths } from 'src/routes/paths';
-// // hooks
+// routes
+import { paths } from '@/routes/paths';
+// hooks
 import { useResponsive } from '@/hooks/use-responsive';
-// // theme
-// import { secondaryFont } from 'src/theme/typography';
- import { textGradient, bgGradient, bgBlur } from '@/theme/css';
-// // layouts
-// import { HEADER } from 'src/layouts/config-layout';
-// // components
-// import Iconify from 'src/components/iconify';
-// import { RouterLink } from 'src/routes/components';
-// import { MotionContainer, varFade } from 'src/components/animate';
+// theme
+import { secondaryFont } from '@/theme/typography';
+import { textGradient, bgGradient, bgBlur } from '@/theme/css';
+// layouts
+import { HEADER } from '@/layouts/config-layout';
+// components
+import Iconify from '@/components/iconify';
+import { RouterLink } from '@/routes/components';
+import { MotionContainer, varFade } from '@/components/animate';
 
 // ----------------------------------------------------------------------
 
 const StyledRoot = styled('div')(({ theme }) => ({
-//   ...bgGradient({
-//     color: alpha(theme.palette.background.default, theme.palette.mode === 'light' ? 0.9 : 0.94),
-//     imgUrl: '/assets/background/overlay_3.jpg',
-//   }),
+  ...bgGradient({
+    color: alpha(theme.palette.background.default, theme.palette.mode === 'light' ? 0.9 : 0.94),
+    imgUrl: '/assets/background/overlay_3.jpg',
+  }),
   width: '100%',
   height: '100vh',
   position: 'relative',
@@ -46,27 +47,27 @@ const StyledWrapper = styled('div')(({ theme }) => ({
   overflow: 'hidden',
   position: 'relative',
   [theme.breakpoints.up('md')]: {
-    // marginTop: HEADER.H_DESKTOP_OFFSET,
+    marginTop: HEADER.H_DESKTOP_OFFSET,
   },
 }));
 
-// const StyledTextGradient = styled(m.h1)(({ theme }) => ({
-// //   ...textGradient(
-// //     `300deg, ${theme.palette.primary.main} 0%, ${theme.palette.warning.main} 25%, ${theme.palette.primary.main} 50%, ${theme.palette.warning.main} 75%, ${theme.palette.primary.main} 100%`
-// //   ),
-//   padding: 0,
-//   marginTop: 8,
-//   lineHeight: 1,
-//   marginBottom: 24,
-//   letterSpacing: 8,
-//   textAlign: 'center',
-//   backgroundSize: '400%',
-//   fontSize: `${64 / 16}rem`,
-// //   fontFamily: secondaryFont.style.fontFamily,
-//   [theme.breakpoints.up('md')]: {
-//     fontSize: `${96 / 16}rem`,
-//   },
-// }));
+const StyledTextGradient = styled(m.h1)(({ theme }) => ({
+  ...textGradient(
+    `300deg, ${theme.palette.primary.main} 0%, ${theme.palette.warning.main} 25%, ${theme.palette.primary.main} 50%, ${theme.palette.warning.main} 75%, ${theme.palette.primary.main} 100%`
+  ),
+  padding: 0,
+  marginTop: 8,
+  lineHeight: 1,
+  marginBottom: 24,
+  letterSpacing: 8,
+  textAlign: 'center',
+  backgroundSize: '400%',
+  fontSize: `${64 / 16}rem`,
+  fontFamily: secondaryFont.style.fontFamily,
+  [theme.breakpoints.up('md')]: {
+    fontSize: `${96 / 16}rem`,
+  },
+}));
 
 const StyledEllipseTop = styled('div')(({ theme }) => ({
   top: -80,
@@ -77,7 +78,7 @@ const StyledEllipseTop = styled('div')(({ theme }) => ({
   position: 'absolute',
   filter: 'blur(100px)',
   WebkitFilter: 'blur(100px)',
-//   backgroundColor: alpha(theme.palette.primary.darker, 0.12),
+  backgroundColor: alpha(theme.palette.primary.darker, 0.12),
 }));
 
 const StyledEllipseBottom = styled('div')(({ theme }) => ({
@@ -89,14 +90,14 @@ const StyledEllipseBottom = styled('div')(({ theme }) => ({
   position: 'absolute',
   filter: 'blur(100px)',
   WebkitFilter: 'blur(100px)',
-//   backgroundColor: alpha(theme.palette.primary.darker, 0.12),
+  backgroundColor: alpha(theme.palette.primary.darker, 0.12),
 }));
 
-const StyledPolygon = styled('div')(({ opacity = 1, anchor = 'left', theme }) => ({
-//   ...bgBlur({
-//     opacity,
-//     color: theme.palette.background.default,
-//   }),
+const StyledPolygon = styled('div')(({ opacity = 1, anchor = 'left', theme }:{opacity:any,anchor:any,theme:any}) => ({
+  ...bgBlur({
+    opacity: opacity?1:1,
+    color: theme.palette.background.default,
+  }),
   zIndex: 9,
   bottom: 0,
   height: 80,
@@ -158,7 +159,7 @@ export default function HomeHero() {
     repeat: Infinity,
   };
 
-  const opacity = 1 - percent / 100;
+  const opacity = 5;
 
   const hide = percent > 120;
 
