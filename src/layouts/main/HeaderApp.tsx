@@ -17,7 +17,6 @@ import { ColorModeContext } from '../../theme';
 import Typography from '@mui/material/Typography';
 import { bgBlur } from '@/theme/css';
 import { useResponsive } from '../../hooks/use-responsive';
-import styles from '../../app/page.module.css'
 
 
 
@@ -61,7 +60,7 @@ export default function HeaderApp() {
 
                             </Link>
                         }
-                    >   <div className={styles.description} style={{fontSize:'20px'}}>
+                    >   <div  style={{fontSize:'20px'}}>
                             [FM]
                         </div>
                     </Badge>

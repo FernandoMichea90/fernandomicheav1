@@ -1,5 +1,5 @@
-"use client"
-import { m, useScroll } from 'framer-motion';
+"use client";
+import { m, useScroll,motion } from 'framer-motion';
 import { useEffect, useRef, useState, useCallback } from 'react';
 // @mui
 import { styled, alpha, useTheme } from '@mui/material/styles';
@@ -12,17 +12,17 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Unstable_Grid2';
 import Typography from '@mui/material/Typography';
 // routes
-import { paths } from '@/routes/paths';
+import { paths } from 'src/routes/paths';
 // hooks
 import { useResponsive } from '@/hooks/use-responsive';
 // theme
-import { secondaryFont } from '@/theme/typography';
-import { textGradient, bgGradient, bgBlur } from '@/theme/css';
+import { secondaryFont } from 'src/theme/typography';
+import { textGradient, bgGradient, bgBlur } from 'src/theme/css';
 // layouts
-import { HEADER } from '@/layouts/config-layout';
+import { HEADER } from 'src/layouts/config-layout';
 // components
-import Iconify from '@/components/iconify';
-import { RouterLink } from '@/routes/components';
+import Iconify from 'src/components/iconify';
+import { RouterLink } from 'src/routes/components';
 import { MotionContainer, varFade } from '@/components/animate';
 
 // ----------------------------------------------------------------------
@@ -51,7 +51,7 @@ const StyledWrapper = styled('div')(({ theme }) => ({
   },
 }));
 
-const StyledTextGradient = styled(m.h1)(({ theme }) => ({
+const StyledTextGradient = styled(motion.h1)(({ theme }) => ({
   ...textGradient(
     `300deg, ${theme.palette.primary.main} 0%, ${theme.palette.warning.main} 25%, ${theme.palette.primary.main} 50%, ${theme.palette.warning.main} 75%, ${theme.palette.primary.main} 100%`
   ),
@@ -93,9 +93,9 @@ const StyledEllipseBottom = styled('div')(({ theme }) => ({
   backgroundColor: alpha(theme.palette.primary.darker, 0.12),
 }));
 
-const StyledPolygon = styled('div')(({ opacity = 1, anchor = 'left', theme }:{opacity:any,anchor:any,theme:any}) => ({
+const StyledPolygon = styled('div')(({ opacity = 1, anchor = 'left', theme }) => ({
   ...bgBlur({
-    opacity: opacity?1:1,
+    opacity,
     color: theme.palette.background.default,
   }),
   zIndex: 9,
@@ -155,11 +155,11 @@ export default function HomeHero() {
   const transition = {
     repeatType: 'loop',
     ease: 'linear',
-    duration: 60 * 4,
+    duration: 60 * 1,
     repeat: Infinity,
   };
 
-  const opacity = 5;
+  const opacity = 1 - percent / 100;
 
   const hide = percent > 120;
 
@@ -177,7 +177,7 @@ export default function HomeHero() {
         },
       }}
     >
-      <m.div variants={varFade().in}>
+      <motion.div variants={varFade().in}>
         <Typography
           variant="h2"
           sx={{
@@ -187,9 +187,9 @@ export default function HomeHero() {
           Start a <br />
           New Project with
         </Typography>
-      </m.div>
+      </motion.div>
 
-      <m.div variants={varFade().in}>
+      <motion.div variants={varFade().in}>
         <StyledTextGradient
           animate={{ backgroundPosition: '200% center' }}
           transition={{
@@ -201,16 +201,16 @@ export default function HomeHero() {
         >
           Minimal
         </StyledTextGradient>
-      </m.div>
+      </motion.div>
 
-      <m.div variants={varFade().in}>
+      <motion.div variants={varFade().in}>
         <Typography variant="body2" sx={{ textAlign: 'center' }}>
           The starting point for your next project is based on MUI.Easy customization Helps you
           build apps faster and better.
         </Typography>
-      </m.div>
+      </motion.div>
 
-      <m.div variants={varFade().in}>
+      <motion.div variants={varFade().in}>
         <Stack
           spacing={0.75}
           direction="row"
@@ -226,9 +226,9 @@ export default function HomeHero() {
             (99+ reviews)
           </Typography>
         </Stack>
-      </m.div>
+      </motion.div>
 
-      <m.div variants={varFade().in}>
+      <motion.div variants={varFade().in}>
         <Stack spacing={1.5} direction={{ xs: 'column-reverse', sm: 'row' }} sx={{ mb: 5 }}>
           <Stack alignItems="center" spacing={2}>
             <Button
@@ -272,24 +272,24 @@ export default function HomeHero() {
             Design Preview
           </Button>
         </Stack>
-      </m.div>
+      </motion.div>
 
       <Stack spacing={3} sx={{ textAlign: 'center' }}>
-        <m.div variants={varFade().in}>
+        <motion.div variants={varFade().in}>
           <Typography variant="overline" sx={{ opacity: 0.4 }}>
             Available For
           </Typography>
-        </m.div>
+        </motion.div>
 
         <Stack spacing={2} direction="row" justifyContent="center">
           {['figma', 'js', 'ts', 'nextjs', 'vite'].map((platform) => (
-            <m.div key={platform} variants={varFade().in}>
+            <motion.div key={platform} variants={varFade().in}>
               <Box
                 component="img"
                 src={`/assets/icons/platforms/ic_${platform}.svg`}
                 sx={{ width: 24, height: 24 }}
               />
-            </m.div>
+            </motion.div>
           ))}
         </Stack>
       </Stack>
@@ -311,7 +311,7 @@ export default function HomeHero() {
       }}
     >
       <Stack
-        component={m.div}
+        component={motion.div}
         variants={varFade().in}
         sx={{
           width: 344,
@@ -319,7 +319,7 @@ export default function HomeHero() {
         }}
       >
         <Box
-          component={m.img}
+          component={motion.img}
           animate={{ y: ['0%', '100%'] }}
           transition={transition}
           alt={isLight ? 'light_1' : 'dark_1'}
@@ -331,7 +331,7 @@ export default function HomeHero() {
           sx={{ position: 'absolute', mt: -5 }}
         />
         <Box
-          component={m.img}
+          component={motion.img}
           animate={{ y: ['-100%', '0%'] }}
           transition={transition}
           alt={isLight ? 'light_1' : 'dark_1'}
@@ -345,12 +345,12 @@ export default function HomeHero() {
       </Stack>
 
       <Stack
-        component={m.div}
+        component={motion.div}
         variants={varFade().in}
         sx={{ width: 720, position: 'relative', ml: -5 }}
       >
         <Box
-          component={m.img}
+          component={motion.img}
           animate={{ y: ['100%', '0%'] }}
           transition={transition}
           alt={isLight ? 'light_2' : 'dark_2'}
@@ -362,7 +362,7 @@ export default function HomeHero() {
           sx={{ position: 'absolute', mt: -5 }}
         />
         <Box
-          component={m.img}
+          component={motion.img}
           animate={{ y: ['0%', '-100%'] }}
           transition={transition}
           alt={isLight ? 'light_2' : 'dark_2'}
@@ -410,7 +410,7 @@ export default function HomeHero() {
                 {renderDescription}
               </Grid>
 
-              {mdUp && <Grid md={6}>{renderSlides}</Grid>}
+              {mdUp && <Grid md={4}>{renderSlides}</Grid>}
             </Grid>
           </Container>
 

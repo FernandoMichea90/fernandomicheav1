@@ -12,8 +12,8 @@ export const varFade = (props) => {
   return {
     // IN
     in: {
-      initial: { opacity: 0 },
-      animate: { opacity: 1, transition: varTranEnter },
+      initial: { opacity: 1 },
+      animate: { opacity: 0, transition: varTranEnter },
       exit: { opacity: 0, transition: varTranExit },
     },
     inUp: {
@@ -33,7 +33,7 @@ export const varFade = (props) => {
       initial: { y: -distance, opacity: 0 },
       animate: {
         y: 0,
-        opacity: 1,
+        opacity: 0,
         transition: varTranEnter({ durationIn, easeIn }),
       },
       exit: {
