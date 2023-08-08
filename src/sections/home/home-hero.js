@@ -275,7 +275,7 @@ export default function HomeHero() {
             <motion.div key={platform} variants={varFade().in}>
               <Box
                 component="img"
-                src={`/assets/icons/platforms/ic_${platform}.svg`}
+                src={process.env.REACT_APP_BASE_PATH+`/assets/icons/platforms/ic_${platform}.svg`}
                 sx={{ width: 24, height: 24 }}
               />
             </motion.div>
