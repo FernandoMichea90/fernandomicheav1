@@ -155,7 +155,7 @@ export default function HomeHero() {
   const transition = {
     repeatType: 'loop',
     ease: 'linear',
-    duration: 60 * 1,
+    duration: 45 * 1,
     repeat: Infinity,
   };
 
@@ -290,7 +290,7 @@ export default function HomeHero() {
       direction="row"
       alignItems="flex-start"
       sx={{
-        height: '150%',
+        height: '100%',
         position: 'absolute',
         opacity: opacity > 0 ? opacity : 0,
         transform: `skew(${-16 - percent / 24}deg, ${4 - percent / 16}deg)`,
@@ -317,7 +317,7 @@ export default function HomeHero() {
               ? `/assets/images/home/hero/light_1.webp`
               : `/assets/images/home/hero/dark_1.webp`
           }
-          sx={{ position: 'absolute', mt: -5 }}
+          sx={{ position: 'absolute', mt: -5,width:"390px"}}
         />
         <Box
           component={motion.img}
@@ -329,14 +329,14 @@ export default function HomeHero() {
               ? `/assets/images/home/hero/light_1.webp`
               : `/assets/images/home/hero/dark_1.webp`
           }
-          sx={{ position: 'absolute' }}
+          sx={{ position: 'absolute',width:"390px" }}
         />
       </Stack>
 
       <Stack
         component={motion.div}
         variants={varFade().in}
-        sx={{ width: 720, position: 'relative', ml: -5 }}
+        sx={{ width: 720, position: 'relative', ml: -5,width:"390px" }}
       >
         <Box
           component={motion.img}
@@ -348,7 +348,7 @@ export default function HomeHero() {
               ? `/assets/images/home/hero/light_2.webp`
               : `/assets/images/home/hero/dark_2.webp`
           }
-          sx={{ position: 'absolute', mt: -5 }}
+          sx={{ position: 'absolute', mt: -5,width:"390px" }}
         />
         <Box
           component={motion.img}
@@ -360,7 +360,7 @@ export default function HomeHero() {
               ? `/assets/images/home/hero/light_2.webp`
               : `/assets/images/home/hero/dark_2.webp`
           }
-          sx={{ position: 'absolute' }}
+          sx={{ position: 'absolute',width:"390px" }}
         />
       </Stack>
     </Stack>
