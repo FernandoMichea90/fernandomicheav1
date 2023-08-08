@@ -31,21 +31,19 @@ export default function HeaderApp() {
     const mdUp = useResponsive('up', 'md');
 
     return (
-        <AppBar>
-            <Toolbar
-                sx={{
-                    transition: theme.transitions.create(['height'], {
-                        easing: theme.transitions.easing.easeInOut,
-                        duration: theme.transitions.duration.shorter,
-                    }),
-                    ...bgBlur({
-                        color: theme.palette.background.default,
-                    }),
-                    color: theme.palette.text.primary,
-
-
-                }}
-
+        <AppBar
+            sx={{
+                color: theme.palette.text.primary,
+                transition: theme.transitions.create(['height'], {
+                    easing: theme.transitions.easing.easeInOut,
+                    duration: theme.transitions.duration.shorter,
+                }),
+                ...bgBlur({
+                    color: theme.palette.background.default,
+                }),
+            }}
+        >
+            <Toolbar 
             >
                 <Container sx={{ height: 1, display: 'flex', alignItems: 'center' }}>
                     <Badge
