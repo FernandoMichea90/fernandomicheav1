@@ -56,6 +56,7 @@ export const NavItem = forwardRef(
     );
   }
 );
+NavItem.displayName = 'NavItem'; // Agregar esta línea para definir el nombre de visualización
 
 NavItem.propTypes = {
   active: PropTypes.bool,
@@ -67,6 +68,7 @@ NavItem.propTypes = {
 };
 
 // ----------------------------------------------------------------------
+
 
 export function NavItemDashboard({ item, sx, ...other }) {
   return (
@@ -101,6 +103,8 @@ export function NavItemDashboard({ item, sx, ...other }) {
     </Link>
   );
 }
+NavItemDashboard.displayName = 'NavItemDashboard'; // Agregar esta línea para definir el nombre de visualización
+
 
 NavItemDashboard.propTypes = {
   item: PropTypes.object,

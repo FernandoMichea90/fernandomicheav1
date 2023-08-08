@@ -177,17 +177,7 @@ export default function HomeHero() {
         },
       }}
     >
-      <motion.div variants={varFade().in}>
-        <Typography
-          variant="h2"
-          sx={{
-            textAlign: 'center',
-          }}
-        >
-          Start a <br />
-          New Project with
-        </Typography>
-      </motion.div>
+      
 
       <motion.div variants={varFade().in}>
         <StyledTextGradient
@@ -199,7 +189,7 @@ export default function HomeHero() {
             repeat: Infinity,
           }}
         >
-          Minimal
+          Fernando Michea
         </StyledTextGradient>
       </motion.div>
 
