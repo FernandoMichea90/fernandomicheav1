@@ -195,8 +195,7 @@ export default function HomeHero() {
 
       <motion.div variants={varFade().in}>
         <Typography variant="body2" sx={{ textAlign: 'center' }}>
-          The starting point for your next project is based on MUI.Easy customization Helps you
-          build apps faster and better.
+           Desarrollador Full Stack apasionado por diseñar aplicaciones  que optimizan la experiencia del usuario.
         </Typography>
       </motion.div>
 

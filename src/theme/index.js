@@ -7,7 +7,7 @@ import {palette} from './palette';
 
 const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
 
-function ThemeProvider({ children }) {
+export function ThemeProvider({ children }) {
   const [mode, setMode] = React.useState('light');
   const colorMode = React.useMemo(
     () => ({
