@@ -275,7 +275,7 @@ export default function HomeHero() {
             <motion.div key={platform} variants={varFade().in}>
               <Box
                 component="img"
-                src={process.env.REACT_APP_BASE_PATH+`/assets/icons/platforms/ic_${platform}.svg`}
+                src={process.env.NEXT_PUBLIC_REACT_APP_BASE_PATH+`/assets/icons/platforms/ic_${platform}.svg`}
                 sx={{ width: 24, height: 24 }}
               />
             </motion.div>
@@ -314,8 +314,8 @@ export default function HomeHero() {
           alt={isLight ? 'light_1' : 'dark_1'}
           src={
             isLight
-              ? `/assets/images/home/hero/light_1.webp`
-              : `/assets/images/home/hero/dark_1.webp`
+              ? process.env.NEXT_PUBLIC_REACT_APP_BASE_PATH+`/assets/images/home/hero/light_1.webp`
+              : process.env.NEXT_PUBLIC_REACT_APP_BASE_PATH+`/assets/images/home/hero/dark_1.webp`
           }
           sx={{ position: 'absolute', mt: -5,width:"390px"}}
         />
@@ -326,8 +326,8 @@ export default function HomeHero() {
           alt={isLight ? 'light_1' : 'dark_1'}
           src={
             isLight
-              ? `/assets/images/home/hero/light_1.webp`
-              : `/assets/images/home/hero/dark_1.webp`
+              ? process.env.NEXT_PUBLIC_REACT_APP_BASE_PATH+`/assets/images/home/hero/light_1.webp`
+              : process.env.NEXT_PUBLIC_REACT_APP_BASE_PATH+`/assets/images/home/hero/dark_1.webp`
           }
           sx={{ position: 'absolute',width:"390px" }}
         />
@@ -345,8 +345,8 @@ export default function HomeHero() {
           alt={isLight ? 'light_2' : 'dark_2'}
           src={
             isLight
-              ? `/assets/images/home/hero/light_2.webp`
-              : `/assets/images/home/hero/dark_2.webp`
+              ? process.env.NEXT_PUBLIC_REACT_APP_BASE_PATH+`/assets/images/home/hero/light_2.webp`
+              : process.env.NEXT_PUBLIC_REACT_APP_BASE_PATH+`/assets/images/home/hero/dark_2.webp`
           }
           sx={{ position: 'absolute', mt: -5,width:"390px" }}
         />
@@ -357,8 +357,8 @@ export default function HomeHero() {
           alt={isLight ? 'light_2' : 'dark_2'}
           src={
             isLight
-              ? `/assets/images/home/hero/light_2.webp`
-              : `/assets/images/home/hero/dark_2.webp`
+              ? process.env.NEXT_PUBLIC_REACT_APP_BASE_PATH+`/assets/images/home/hero/light_2.webp`
+              : process.env.NEXT_PUBLIC_REACT_APP_BASE_PATH+`/assets/images/home/hero/dark_2.webp`
           }
           sx={{ position: 'absolute',width:"390px" }}
         />
