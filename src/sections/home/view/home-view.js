@@ -9,6 +9,7 @@ import MainLayout from '@/layouts/mainsecond';
 // components
 import ScrollProgress from '@/components/scroll-progress';
 import HomeHero from '@/sections/home/home-hero';
+import { useEffect } from 'react';
 
 // ----------------------------------------------------------------------
 
@@ -36,13 +37,17 @@ const StyledPolygon = styled('div')(({ anchor = 'top', theme }) => ({
 
 export default function HomeView() {
   const { scrollYProgress } = useScroll();
+ 
+  useEffect(() => {
+    console.log("process.env.NEXT_PUBLIC_REACT_APP_BASE_PATH", process.env.NEXT_PUBLIC_REACT_APP_BASE_PATH);
+  }, [process.env.NEXT_PUBLIC_REACT_APP_BASE_PATH])
 
   return (
     <MainLayout>
       <ScrollProgress scrollYProgress={scrollYProgress} />
 
       <HomeHero />
-     
+
       <Box
         sx={{
           overflow: 'hidden',
@@ -50,10 +55,14 @@ export default function HomeView() {
           bgcolor: 'background.default',
         }}
       >
-      <div style={{marginTop:"100vh"}}>
-        <h1>{process.env.REACT_APP_BASE_PATH?process.env.REACT_APP_BASE_PATH:"no existe variable"}</h1>
-      </div>
-        
+        <div style={{ marginTop: "100vh" }}>
+          <h1>
+            {process.env.NEXT_PUBLIC_REACT_APP_BASE_PATH
+              ? process.env.NEXT_PUBLIC_REACT_APP_BASE_PATH.toString()
+              : "no existe variable"}
+          </h1>
+        </div>
+
       </Box>
     </MainLayout>
   );

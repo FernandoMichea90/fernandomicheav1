@@ -29,7 +29,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      REACT_APP_BASE_PATH: ${{ secrets.REACT_APP_BASE_PATH }}
+      NEXT_PUBLIC_REACT_APP_BASE_PATH: ${{ secrets.REACT_APP_BASE_PATH }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
