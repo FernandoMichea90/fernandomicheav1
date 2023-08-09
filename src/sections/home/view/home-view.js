@@ -51,7 +51,7 @@ export default function HomeView() {
         }}
       >
       <div style={{marginTop:"100vh"}}>
-        <h1>hello</h1>
+        <h1>{process.env.REACT_APP_BASE_PATH?process.env.REACT_APP_BASE_PATH:"no existe variable"}</h1>
       </div>
         
       </Box>
