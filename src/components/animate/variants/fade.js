@@ -9,6 +9,8 @@ export const varFade = (props) => {
   const easeIn = props?.easeIn;
   const easeOut = props?.easeOut;
 
+  console.log(distance, durationIn, durationOut, easeIn, easeOut)
+
   return {
     // IN
     in: {
@@ -17,7 +19,7 @@ export const varFade = (props) => {
       exit: { opacity: 0, transition: varTranExit },
     },
     inUp: {
-      initial: { y: distance, opacity: 0 },
+      initial: { y: distance, opacity: 0.0 },
       animate: {
         y: 0,
         opacity: 1,

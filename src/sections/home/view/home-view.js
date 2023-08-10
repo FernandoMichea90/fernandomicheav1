@@ -10,7 +10,8 @@ import MainLayout from '@/layouts/mainsecond';
 import ScrollProgress from '@/components/scroll-progress';
 import HomeHero from '@/sections/home/home-hero';
 import { useEffect } from 'react';
-import Home_about from './home-about';
+import Home_about from '../home-about';
+import HomePortafolio from '../HomePortafolio';
 
 // ----------------------------------------------------------------------
 
@@ -30,7 +31,7 @@ const StyledPolygon = styled('div')(({ anchor = 'top', theme }) => ({
   }),
   ...(anchor === 'bottom' && {
     bottom: -1,
-    backgroundColor: theme.palette.grey[900],
+    // backgroundColor: theme.palette.grey[900],
   }),
 }));
 
@@ -38,7 +39,7 @@ const StyledPolygon = styled('div')(({ anchor = 'top', theme }) => ({
 
 export default function HomeView() {
   const { scrollYProgress } = useScroll();
- 
+
   useEffect(() => {
     console.log("process.env.NEXT_PUBLIC_REACT_APP_BASE_PATH", process.env.NEXT_PUBLIC_REACT_APP_BASE_PATH);
   }, [process.env.NEXT_PUBLIC_REACT_APP_BASE_PATH])
@@ -48,7 +49,7 @@ export default function HomeView() {
       <ScrollProgress scrollYProgress={scrollYProgress} />
 
       <HomeHero />
-      
+
 
       <Box
         sx={{
@@ -58,6 +59,12 @@ export default function HomeView() {
         }}
       >
         <Home_about />
+        
+        <Box sx={{ position: 'relative' }}>
+          <StyledPolygon />
+          <HomePortafolio/>
+          <StyledPolygon anchor="bottom" />
+        </Box>
 
         <div style={{ marginTop: "100vh" }}>
           <h1>

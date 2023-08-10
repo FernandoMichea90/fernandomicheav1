@@ -3,6 +3,7 @@ import React from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
 import { createTheme, ThemeProvider as MuiThemeProvider } from '@mui/material/styles';
 import { ReactNode } from 'react';
+import {typography} from './typography';
 import {palette} from './palette';
 
 const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
@@ -24,6 +25,7 @@ export function ThemeProvider({ children }) {
         mode: mode,
         ...(mode === 'light' ? palette("light") : palette("dark")),
       },
+      typography: typography,
     });
   }, [mode]);
 

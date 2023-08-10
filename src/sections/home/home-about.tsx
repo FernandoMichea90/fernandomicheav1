@@ -10,9 +10,12 @@ import Grid from '@mui/material/Unstable_Grid2';
 import Typography from '@mui/material/Typography';
 import LinearProgress from '@mui/material/LinearProgress';
 import Iconify from '@/components/iconify';
+import {useResponsive} from '../../hooks/use-responsive'
+import Image from '../../components/image'
 
 
 const Home_about = () => {
+    const mdUp = useResponsive('up', 'md');
     const theme = useTheme();
 
     return (
@@ -24,11 +27,37 @@ const Home_about = () => {
           }}
         >
           <Grid container columnSpacing={{ md: 3 }} alignItems="flex-start">
+          {mdUp && (
+          <Grid container xs={12} md={6} lg={7} alignItems="center" sx={{ pr: { md: 7 } }}>
+            <Grid xs={6}>
+              <m.div >
+                <Image
+                  alt="our office 2"
+                  src={process.env.NEXT_PUBLIC_REACT_APP_BASE_PATH+"/assets/images/about/what_2.png"}
+                  ratio="1/1"
+                  sx={{ borderRadius: 3 }}
+                />
+              </m.div>
+            </Grid>
+
+            <Grid xs={6}>
+              <m.div >
+                <Image
+                  alt={"our office 1"}
+                  src={process.env.NEXT_PUBLIC_REACT_APP_BASE_PATH+"/assets/images/about/what_1.png"}
+                  ratio="3/4"
+                  sx={{ borderRadius: 3 }}
+                />
+              </m.div>
+            </Grid>
+          </Grid>
+        )}
          
-            <Grid xs={12} md={6} lg={5}>
-              <m.div>
+            <Grid   style={{margin:'auto'}} xs={12} md={6} lg={5}>
+              <div>
+              <m.div >
                 <Typography variant="h2" sx={{ mb: 3 }}>
-                  What is Minimal?
+                  Sobre mi 
                 </Typography>
               </m.div>
     
@@ -38,23 +67,11 @@ const Home_about = () => {
                     color: theme.palette.mode === 'light' ? 'text.secondary' : 'common.white',
                   }}
                 >
-                  Our theme is the most advanced and user-friendly theme you will find on the market, we
-                  have documentation and video to help set your site really easily, pre-installed demos
-                  you can import in one click and everything from the theme options to page content can
-                  be edited from the front-end. This is the theme you are looking for.
+                  Soy un desarrollador full stack con enfoque en diseño y programación web. Apasionado por crear soluciones digitales atractivas y funcionales.
                 </Typography>
               </m.div>
-    
-              <m.div >
-                <Button
-                  variant="outlined"
-                  color="inherit"
-                  size="large"
-                  endIcon={<Iconify icon ='eva:arrow-ios-forward-fill' />}
-                >
-                  Our Work
-                </Button>
-              </m.div>
+              </div>
+
             </Grid>
           </Grid>
         </Container>
