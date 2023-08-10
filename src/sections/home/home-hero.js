@@ -199,7 +199,7 @@ export default function HomeHero() {
         </Typography>
       </motion.div>
 
-      <motion.div variants={varFade().in}>
+      {/* <motion.div variants={varFade().in}>
         <Stack
           spacing={0.75}
           direction="row"
@@ -215,10 +215,10 @@ export default function HomeHero() {
             (99+ reviews)
           </Typography>
         </Stack>
-      </motion.div>
+      </motion.div> */}
 
       <motion.div variants={varFade().in}>
-        <Stack spacing={1.5} direction={{ xs: 'column-reverse', sm: 'row' }} sx={{ mb: 5 }}>
+        <Stack style={{marginTop:'15px'}} spacing={1.5} direction={{ xs: 'column-reverse', sm: 'row' }} sx={{ mb: 5 }}>
           <Stack alignItems="center" spacing={2}>
             <Button
               component={RouterLink}
@@ -226,12 +226,12 @@ export default function HomeHero() {
               color="inherit"
               size="large"
               variant="contained"
-              startIcon={<Iconify icon="eva:flash-fill" width={24} />}
+              startIcon={<Iconify icon="humbleicons:download" width={24} />}
             >
-              Live Preview
+             Descargar CV
             </Button>
 
-            <Link
+            {/* <Link
               color="inherit"
               variant="caption"
               target="_blank"
@@ -245,20 +245,20 @@ export default function HomeHero() {
             >
               <Iconify icon="eva:external-link-fill" width={16} sx={{ mr: 0.5 }} />
               Get Free Version
-            </Link>
+            </Link> */}
           </Stack>
 
           <Button
             color="inherit"
             size="large"
             variant="outlined"
-            startIcon={<Iconify icon="eva:external-link-fill" width={24} />}
+            startIcon={<Iconify icon="uil:github" width={24} />}
             target="_blank"
             rel="noopener"
             href={paths.figma}
             sx={{ borderColor: 'text.primary' }}
           >
-            Design Preview
+            GitHub
           </Button>
         </Stack>
       </motion.div>
@@ -266,16 +266,16 @@ export default function HomeHero() {
       <Stack spacing={3} sx={{ textAlign: 'center' }}>
         <motion.div variants={varFade().in}>
           <Typography variant="overline" sx={{ opacity: 0.4 }}>
-            Available For
+            Redes Sociales
           </Typography>
         </motion.div>
 
         <Stack spacing={2} direction="row" justifyContent="center">
-          {['figma', 'js', 'ts', 'nextjs', 'vite'].map((platform) => (
+          {['github','linkedin'].map((platform) => (
             <motion.div key={platform} variants={varFade().in}>
               <Box
                 component="img"
-                src={process.env.NEXT_PUBLIC_REACT_APP_BASE_PATH+`/assets/icons/platforms/ic_${platform}.svg`}
+                src={process.env.NEXT_PUBLIC_REACT_APP_BASE_PATH+`/assets/icons/redes_sociales/ic_${platform}.svg`}
                 sx={{ width: 24, height: 24 }}
               />
             </motion.div>
