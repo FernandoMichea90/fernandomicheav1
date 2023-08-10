@@ -10,6 +10,7 @@ import MainLayout from '@/layouts/mainsecond';
 import ScrollProgress from '@/components/scroll-progress';
 import HomeHero from '@/sections/home/home-hero';
 import { useEffect } from 'react';
+import Home_about from './home-about';
 
 // ----------------------------------------------------------------------
 
@@ -47,6 +48,7 @@ export default function HomeView() {
       <ScrollProgress scrollYProgress={scrollYProgress} />
 
       <HomeHero />
+      
 
       <Box
         sx={{
@@ -55,6 +57,8 @@ export default function HomeView() {
           bgcolor: 'background.default',
         }}
       >
+        <Home_about />
+
         <div style={{ marginTop: "100vh" }}>
           <h1>
             {process.env.NEXT_PUBLIC_REACT_APP_BASE_PATH
