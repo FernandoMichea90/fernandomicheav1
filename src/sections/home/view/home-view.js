@@ -40,10 +40,7 @@ const StyledPolygon = styled('div')(({ anchor = 'top', theme }) => ({
 export default function HomeView() {
   const { scrollYProgress } = useScroll();
 
-  useEffect(() => {
-    console.log("process.env.NEXT_PUBLIC_REACT_APP_BASE_PATH", process.env.NEXT_PUBLIC_REACT_APP_BASE_PATH);
-  }, [process.env.NEXT_PUBLIC_REACT_APP_BASE_PATH])
-
+  
   return (
     <MainLayout>
       <ScrollProgress scrollYProgress={scrollYProgress} />
