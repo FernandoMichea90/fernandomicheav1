@@ -1,5 +1,5 @@
-import PropTypes from 'prop-types';
-import { forwardRef } from 'react';
+import * as React from 'react';
+import { forwardRef, ForwardRefRenderFunction } from 'react';
 // icons
 import { Icon } from '@iconify/react';
 // @mui
@@ -7,7 +7,16 @@ import Box from '@mui/material/Box';
 
 // ----------------------------------------------------------------------
 
-const Iconify = forwardRef(({ icon, width = 20, sx, ...other }, ref) => (
+interface IconifyProps {
+  icon: any;
+  sx?: React.CSSProperties;
+  width?: number;
+}
+
+const Iconify: ForwardRefRenderFunction<HTMLDivElement, IconifyProps> = (
+  { icon, width = 20, sx, ...other },
+  ref
+) => (
   <Box
     ref={ref}
     component={Icon}
@@ -16,14 +25,8 @@ const Iconify = forwardRef(({ icon, width = 20, sx, ...other }, ref) => (
     sx={{ width, height: width, ...sx }}
     {...other}
   />
-));
+);
 
 Iconify.displayName = 'Iconify';
 
-Iconify.propTypes = {
-  icon: PropTypes.any,
-  sx: PropTypes.object,
-  width: PropTypes.number,
-};
-
-export default Iconify;
+export default React.forwardRef(Iconify);

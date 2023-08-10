@@ -50,7 +50,7 @@ const Home_about = () => {
                   variant="outlined"
                   color="inherit"
                   size="large"
-                  endIcon={<Iconify icon="eva:arrow-ios-forward-fill" />}
+                  endIcon={<Iconify icon ='eva:arrow-ios-forward-fill' />}
                 >
                   Our Work
                 </Button>
