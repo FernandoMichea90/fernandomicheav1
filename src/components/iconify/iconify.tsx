@@ -8,8 +8,8 @@ import Box from '@mui/material/Box';
 // ----------------------------------------------------------------------
 
 interface IconifyProps {
-  icon: any;
-  sx?: React.CSSProperties;
+  icon?: any;
+  sx?: any;
   width?: number;
 }
 

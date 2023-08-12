@@ -1,0 +1,23 @@
+[
+    {
+        "nombre": "Clinica Almendral",
+        "iconos": ["mui","react","firebase","netlify"],
+        "imagen": "clinica_almendral.png",
+        "github": "https://github.com/FernandoMichea90/Clinicaalmendraldos",
+        "web": "https://www.clinicaalmendral.cl/"
+    },
+    {
+        "nombre": "Planet Colab",
+        "iconos": ["mui","react","firebase","netlify"],
+        "imagen": "planet_colab.png",
+        "github": "https://github.com/FernandoMichea90/crispaper",
+        "web": "https://planetcolab.com/"
+    },
+    {
+        "nombre": "Hotel Ecomusic",
+        "iconos": ["mui","react","firebase","netlify"],
+        "imagen": "hotel_ecomusic.png",
+        "github": "https://github.com/FernandoMichea90/hotelecomusicfrontend",
+        "web": "https://hotelecomusic.cl/"
+    }
+]

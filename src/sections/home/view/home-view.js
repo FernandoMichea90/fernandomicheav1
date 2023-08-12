@@ -12,6 +12,10 @@ import HomeHero from '@/sections/home/home-hero';
 import { useEffect } from 'react';
 import Home_about from '../home-about';
 import HomePortafolio from '../HomePortafolio';
+import PortafolioClinicaAlmendral from '../PortafolioClinicaAlmendral';
+import paginas  from "@/components/data/paginas.json"
+import Portafolio from '../Portafolio';
+
 
 // ----------------------------------------------------------------------
 
@@ -44,10 +48,7 @@ export default function HomeView() {
   return (
     <MainLayout>
       <ScrollProgress scrollYProgress={scrollYProgress} />
-
       <HomeHero />
-
-
       <Box
         sx={{
           overflow: 'hidden',
@@ -57,19 +58,17 @@ export default function HomeView() {
       >
         <Home_about />
         
-        <Box sx={{ position: 'relative' }}>
+        <Box sx={{ position: 'relative',marginBottom:"100px" }}>
           <StyledPolygon />
           <HomePortafolio/>
           <StyledPolygon anchor="bottom" />
         </Box>
+        {
+          paginas.map((pagina, index) => (
+            <Portafolio key={index} nombre={pagina.nombre} iconos={pagina.iconos} imagen={pagina.imagen} github={pagina.github} web={pagina.web}/>
+          ))
+        }
 
-        <div style={{ marginTop: "100vh" }}>
-          <h1>
-            {process.env.NEXT_PUBLIC_REACT_APP_BASE_PATH
-              ? process.env.NEXT_PUBLIC_REACT_APP_BASE_PATH.toString()
-              : "no existe variable"}
-          </h1>
-        </div>
 
       </Box>
     </MainLayout>

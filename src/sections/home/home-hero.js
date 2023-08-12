@@ -23,7 +23,7 @@ import { HEADER } from 'src/layouts/config-layout';
 // components
 import Iconify from 'src/components/iconify';
 import { RouterLink } from 'src/routes/components';
-import { MotionContainer, varFade } from '@/components/animate';
+import {  MotionViewport, varFade } from '@/components/animate';
 
 // ----------------------------------------------------------------------
 
@@ -155,7 +155,7 @@ export default function HomeHero() {
   const transition = {
     repeatType: 'loop',
     ease: 'linear',
-    duration: 45 * 1,
+    duration: 50 * 1,
     repeat: Infinity,
   };
 
@@ -284,6 +284,7 @@ export default function HomeHero() {
       </Stack>
     </Stack>
   );
+  
 
   const renderSlides = (
     <Stack
@@ -393,7 +394,7 @@ export default function HomeHero() {
         }}
       >
         <StyledWrapper>
-          <Container component={MotionContainer} sx={{ height: 1 }}>
+          <Container component={ MotionViewport } sx={{ height: 1 }}>
             <Grid container columnSpacing={{ md: 10 }} sx={{ height: 1 }}>
               <Grid xs={12} md={6}>
                 {renderDescription}

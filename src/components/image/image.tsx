@@ -17,7 +17,7 @@ interface ImageProps {
   ratio?: '4/3' | '3/4' | '6/4' | '4/6' | '16/9' | '9/16' | '21/9' | '9/21' | '1/1';
   scrollPosition?: { x: number; y: number };
   src?: string;
-  sx?: React.CSSProperties;
+  sx?:any;
   threshold?: number;
   useIntersectionObserver?: boolean;
   visibleByDefault?: boolean;
