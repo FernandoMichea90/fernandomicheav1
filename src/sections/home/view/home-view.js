@@ -65,7 +65,9 @@ export default function HomeView() {
         </Box>
         {
           paginas.map((pagina, index) => (
+            <div style={{marginBottom:'200px'}}>
             <Portafolio key={index} nombre={pagina.nombre} iconos={pagina.iconos} imagen={pagina.imagen} github={pagina.github} web={pagina.web}/>
+            </div>
           ))
         }
 

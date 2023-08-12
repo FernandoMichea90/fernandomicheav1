@@ -77,7 +77,7 @@ export default function HomeColorPresets({nombre, iconos, imagen, github, web}: 
 
             <Box sx={{ position: 'absolute', top: 0,left:0,right:0 }}>
                 <m.div variants={varFade().inUp}>
-                    <div style={{width: '40vw', height: '100%',perspective:"1000px",margin:'auto'}}>
+                    <div style={{width: '42vw', height: '100%',perspective:"1000px",margin:'auto', minWidth:'300px'}}>
                     <Image
                          sx={{
                             width: "100%",
