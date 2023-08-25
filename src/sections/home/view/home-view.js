@@ -15,6 +15,7 @@ import HomePortafolio from '../HomePortafolio';
 import PortafolioClinicaAlmendral from '../PortafolioClinicaAlmendral';
 import paginas  from "@/components/data/paginas.json"
 import Portafolio from '../Portafolio';
+import Contacto from '../Contacto';
 
 
 // ----------------------------------------------------------------------
@@ -72,6 +73,8 @@ export default function HomeView() {
         }
 
 
+         <Contacto/>
+        
       </Box>
     </MainLayout>
   );
