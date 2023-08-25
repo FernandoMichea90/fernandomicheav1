@@ -1,0 +1,22 @@
+[
+    {
+        "icono": "github",
+         "title": "/fernandoMichea90",
+         "link": "https://github.com/fernandoMichea90"
+    },
+    {
+        "icono": "google-gmail",
+        "title": "fmicheam@gmail.com",
+        "link": "mailto:fmicheam@gmail.com"
+    },
+    {
+        "icono": "linkedin",
+        "title": "fernando-michea",
+        "link": "https://www.linkedin.com/in/fernando-michea-7667a9140/"
+    },
+    {
+        "icono": "whatsapp-icon",
+        "title": "+56 9 7622 6068",
+        "link": "https://api.whatsapp.com/send?phone=56976226068?text=Hola%20Fernando!"
+    }
+]
