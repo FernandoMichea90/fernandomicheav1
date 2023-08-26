@@ -17,7 +17,7 @@ export default function MainLayout({ children }) {
 
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', height: 1 }}>
-      <HeaderApp />
+    <HeaderApp />
 
       <Box
         component="main"

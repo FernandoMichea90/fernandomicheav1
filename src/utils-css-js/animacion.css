@@ -1,0 +1,153 @@
+/* Animación de entrada hacia arriba */
+@keyframes inUp {
+    from {
+      transform: translateY(120px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Animación de entrada hacia abajo */
+  @keyframes inDown {
+    from {
+      transform: translateY(-120px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Animación de entrada hacia la izquierda */
+  @keyframes inLeft {
+    from {
+      transform: translateX(-120px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Animación de entrada hacia la derecha */
+  @keyframes inRight {
+    from {
+      transform: translateX(120px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Animación de salida hacia arriba */
+  @keyframes outUp {
+    from {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateY(-120px);
+      opacity: 0;
+    }
+  }
+  
+  /* Animación de salida hacia abajo */
+  @keyframes outDown {
+    from {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateY(120px);
+      opacity: 0;
+    }
+  }
+  
+  /* Animación de salida hacia la izquierda */
+  @keyframes outLeft {
+    from {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateX(-120px);
+      opacity: 0;
+    }
+  }
+  
+  /* Animación de salida hacia la derecha */
+  @keyframes outRight {
+    from {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateX(120px);
+      opacity: 0;
+    }
+  }
+  
+  /* Aplicar las animaciones a elementos con clases específicas */
+  .in-up {
+    animation: inUp 10s ease; /* Ajusta la duración y la función de aceleración según tus necesidades */
+    transition-property: opacity, transform;
+    transition-duration: 10s; /* Duración de la transición al pasar el mouse */
+    transition-timing-function: cubic-bezier(0.43, 0.13, 0.23, 0.96); /* Función de aceleración de la transición al pasar el mouse */
+  }
+  
+  .in-down {
+    animation: inDown 0.3s ease; /* Ajusta la duración y la función de aceleración según tus necesidades */
+    transition-property: opacity, transform;
+    transition-duration: 0.32s; /* Duración de la transición al pasar el mouse */
+    transition-timing-function: cubic-bezier(0.43, 0.13, 0.23, 0.96); /* Función de aceleración de la transición al pasar el mouse */
+  }
+  
+  .in-left {
+    animation: inLeft 0.3s ease; /* Ajusta la duración y la función de aceleración según tus necesidades */
+    transition-property: opacity, transform;
+    transition-duration: 0.32s; /* Duración de la transición al pasar el mouse */
+    transition-timing-function: cubic-bezier(0.43, 0.13, 0.23, 0.96); /* Función de aceleración de la transición al pasar el mouse */
+  }
+  
+  .in-right {
+    animation: inRight 0.3s ease; /* Ajusta la duración y la función de aceleración según tus necesidades */
+    transition-property: opacity, transform;
+    transition-duration: 0.32s; /* Duración de la transición al pasar el mouse */
+    transition-timing-function: cubic-bezier(0.43, 0.13, 0.23, 0.96); /* Función de aceleración de la transición al pasar el mouse */
+  }
+  
+  .out-up {
+    animation: outUp 0.3s ease; /* Ajusta la duración y la función de aceleración según tus necesidades */
+    transition-property: opacity, transform;
+    transition-duration: 0.32s; /* Duración de la transición al pasar el mouse */
+    transition-timing-function: cubic-bezier(0.43, 0.13, 0.23, 0.96); /* Función de aceleración de la transición al pasar el mouse */
+  }
+  
+  .out-down {
+    animation: outDown 0.3s ease; /* Ajusta la duración y la función de aceleración según tus necesidades */
+    transition-property: opacity, transform;
+    transition-duration: 0.32s; /* Duración de la transición al pasar el mouse */
+    transition-timing-function: cubic-bezier(0.43, 0.13, 0.23, 0.96); /* Función de aceleración de la transición al pasar el mouse */
+  }
+  
+  .out-left {
+    animation: outLeft 0.3s ease; /* Ajusta la duración y la función de aceleración según tus necesidades */
+    transition-property: opacity, transform;
+    transition-duration: 0.32s; /* Duración de la transición al pasar el mouse */
+    transition-timing-function: cubic-bezier(0.43, 0.13, 0.23, 0.96); /* Función de aceleración de la transición al pasar el mouse */
+  }
+  
+  .out-right {
+    animation: outRight 0.3s ease; /* Ajusta la duración y la función de aceleración según tus necesidades */
+    transition-property: opacity, transform;
+    transition-duration: 0.32s; /* Duración de la transición al pasar el mouse */
+    transition-timing-function: cubic-bezier(0.43, 0.13, 0.23, 0.96); /* Función de aceleración de la transición al pasar el mouse */
+  }
+  

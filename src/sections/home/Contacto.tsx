@@ -7,9 +7,10 @@ import contacto from '@/components/data/contacto.json';
 
 const renderContacto = () => {
     return contacto.map((contact, index) => { // Corregir los parámetros del map
+           console.log("index "+index)
         return (
             <Grid item xs={12} md={4} key={index}> {/* Agregar una clave única */}
-                    <IconContact icono={contact.icono} title={contact.title} link={contact.link} />
+                    <IconContact icono={contact.icono} title={contact.title} index={index} link={contact.link} />
             </Grid>
         )
     })
@@ -18,7 +19,7 @@ const renderContacto = () => {
 const Contacto = () => {
     const theme = useTheme();
     return (
-        <Box sx={{ textAlign: { xs: 'center', md: 'center' }, mt: { xs: 10, md: 20 },width:{xs:"100%", md:"80%"},margin:"auto"}}>
+        <Box  sx={{ textAlign: { xs: 'center', md: 'center' }, mt: { xs: 10, md: 20 },width:{xs:"100%", md:"80%"},margin:"auto",marginBottom:"170px"}}>
             <Typography
                 variant="h2"
                 sx={{

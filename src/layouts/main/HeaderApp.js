@@ -72,14 +72,14 @@ export default function HeaderApp() {
                     </Box>
                     <Box sx={{ flexGrow: 1 }} />
                     <Stack component="nav" direction="row" spacing={5} sx={{ mr: 2.5, height: 1 }}>
-                        <Button  sx={{ color: theme.palette.text.primary }}>
-                            About
+                        <Button href='#sobremi' sx={{ color: theme.palette.text.primary }}>
+                            Sobre mi
                         </Button>
-                        <Button  sx={{ color: theme.palette.text.primary }}>
+                        <Button  href="#portafolio"  sx={{ color: theme.palette.text.primary }}>
                             Portafolio
                         </Button>
 
-                        <Button  sx={{ color: theme.palette.text.primary }}>
+                        <Button href='#contacto'  sx={{ color: theme.palette.text.primary }}>
                             Contacto
                         </Button>
 

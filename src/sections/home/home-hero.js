@@ -24,6 +24,7 @@ import { HEADER } from 'src/layouts/config-layout';
 import Iconify from 'src/components/iconify';
 import { RouterLink } from 'src/routes/components';
 import {  MotionViewport, varFade } from '@/components/animate';
+import contacto from  "@/components/data/contacto.json"
 
 // ----------------------------------------------------------------------
 
@@ -122,6 +123,16 @@ const StyledPolygon = styled('div')(({ opacity = 1, anchor = 'left', theme }) =>
 // ----------------------------------------------------------------------
 
 export default function HomeHero() {
+
+  var imagen_light1 = process.env.NEXT_PUBLIC_REACT_APP_BASE_PATH+`/assets/images/home/hero/section_1.png`;
+  var imagen_dark1 = process.env.NEXT_PUBLIC_REACT_APP_BASE_PATH+`/assets/images/home/hero/dark_1.webp`;
+  var imagen_light2 = process.env.NEXT_PUBLIC_REACT_APP_BASE_PATH+`/assets/images/home/hero/section_1.png`;
+  var imagen_dark2 = process.env.NEXT_PUBLIC_REACT_APP_BASE_PATH+`/assets/images/home/hero/dark_2.webp`;
+
+
+
+
+
   const mdUp = useResponsive('up', 'md');
 
   const theme = useTheme();
@@ -155,7 +166,7 @@ export default function HomeHero() {
   const transition = {
     repeatType: 'loop',
     ease: 'linear',
-    duration: 50 * 1,
+    duration: 25*1,
     repeat: Infinity,
   };
 
@@ -222,7 +233,8 @@ export default function HomeHero() {
           <Stack alignItems="center" spacing={2}>
             <Button
               component={RouterLink}
-              href={paths.dashboard.root}
+              href="/assets/cv/Curriculum.pdf"
+              target="_blank"
               color="inherit"
               size="large"
               variant="contained"
@@ -255,7 +267,7 @@ export default function HomeHero() {
             startIcon={<Iconify icon="uil:github" width={24} />}
             target="_blank"
             rel="noopener"
-            href={paths.figma}
+            href="https://github.com/fernandoMichea90"
             sx={{ borderColor: 'text.primary' }}
           >
             GitHub
@@ -271,13 +283,15 @@ export default function HomeHero() {
         </motion.div>
 
         <Stack spacing={2} direction="row" justifyContent="center">
-          {['github','linkedin'].map((platform) => (
-            <motion.div key={platform} variants={varFade().in}>
+          {contacto.map((platform,key) => (
+            <motion.div key={key} variants={varFade().inUp}>
+              <a href={platform.link} target='_blank'>
               <Box
                 component="img"
-                src={process.env.NEXT_PUBLIC_REACT_APP_BASE_PATH+`/assets/icons/redes_sociales/ic_${platform}.svg`}
+                src={process.env.NEXT_PUBLIC_REACT_APP_BASE_PATH+`/assets/icons/redes_sociales/ic_${platform.icono}.svg`}
                 sx={{ width: 24, height: 24 }}
               />
+              </a>
             </motion.div>
           ))}
         </Stack>
@@ -288,21 +302,19 @@ export default function HomeHero() {
 
   const renderSlides = (
     <Stack
-      direction="row"
-      alignItems="flex-start"
       sx={{
         height: '100%',
+        marginLeft:"170px",
         position: 'absolute',
         opacity: opacity > 0 ? opacity : 0,
-        transform: `skew(${-16 - percent / 24}deg, ${4 - percent / 16}deg)`,
+        transform: `skew(${0 - percent / 24}deg, ${  percent / 16}deg)`,
         ...(theme.direction === 'rtl' && {
-          transform: `skew(${16 + percent / 24}deg, ${4 + percent / 16}deg)`,
+          transform: `skew(${16 + percent / 24}deg, ${20 + percent / 16}deg)`,
         }),
       }}
     >
       <Stack
         component={motion.div}
-        variants={varFade().in}
         sx={{
           width: 344,
           position: 'relative',
@@ -315,10 +327,10 @@ export default function HomeHero() {
           alt={isLight ? 'light_1' : 'dark_1'}
           src={
             isLight
-              ? process.env.NEXT_PUBLIC_REACT_APP_BASE_PATH+`/assets/images/home/hero/light_1.webp`
-              : process.env.NEXT_PUBLIC_REACT_APP_BASE_PATH+`/assets/images/home/hero/dark_1.webp`
+              ? imagen_light1
+              : imagen_light1
           }
-          sx={{ position: 'absolute', mt: -5,width:"390px"}}
+          sx={{ position: 'absolute', width:"344px"}}
         />
         <Box
           component={motion.img}
@@ -327,14 +339,14 @@ export default function HomeHero() {
           alt={isLight ? 'light_1' : 'dark_1'}
           src={
             isLight
-              ? process.env.NEXT_PUBLIC_REACT_APP_BASE_PATH+`/assets/images/home/hero/light_1.webp`
-              : process.env.NEXT_PUBLIC_REACT_APP_BASE_PATH+`/assets/images/home/hero/dark_1.webp`
+              ? imagen_light1
+              : imagen_light1
           }
-          sx={{ position: 'absolute',width:"390px" }}
+          sx={{ position: 'absolute',width:"344px"  }}
         />
       </Stack>
 
-      <Stack
+      {/* <Stack
         component={motion.div}
         variants={varFade().in}
         sx={{ width: 720, position: 'relative', ml: -5,width:"390px" }}
@@ -346,8 +358,8 @@ export default function HomeHero() {
           alt={isLight ? 'light_2' : 'dark_2'}
           src={
             isLight
-              ? process.env.NEXT_PUBLIC_REACT_APP_BASE_PATH+`/assets/images/home/hero/light_2.webp`
-              : process.env.NEXT_PUBLIC_REACT_APP_BASE_PATH+`/assets/images/home/hero/dark_2.webp`
+              ? imagen_light2
+              : imagen_light2
           }
           sx={{ position: 'absolute', mt: -5,width:"390px" }}
         />
@@ -358,12 +370,12 @@ export default function HomeHero() {
           alt={isLight ? 'light_2' : 'dark_2'}
           src={
             isLight
-              ? process.env.NEXT_PUBLIC_REACT_APP_BASE_PATH+`/assets/images/home/hero/light_2.webp`
-              : process.env.NEXT_PUBLIC_REACT_APP_BASE_PATH+`/assets/images/home/hero/dark_2.webp`
+              ? imagen_light2
+              : imagen_light2
           }
           sx={{ position: 'absolute',width:"390px" }}
         />
-      </Stack>
+      </Stack> */}
     </Stack>
   );
 
@@ -395,12 +407,15 @@ export default function HomeHero() {
       >
         <StyledWrapper>
           <Container component={ MotionViewport } sx={{ height: 1 }}>
-            <Grid container columnSpacing={{ md: 10 }} sx={{ height: 1 }}>
+            <Grid 
+             
+            
+            container columnSpacing={{ md: 10 }} sx={{ height: 1 }}>
               <Grid xs={12} md={6}>
                 {renderDescription}
               </Grid>
-
-              {mdUp && <Grid md={4}>{renderSlides}</Grid>}
+              
+              {mdUp && <Grid  md={6}>{renderSlides}</Grid>}
             </Grid>
           </Container>
 

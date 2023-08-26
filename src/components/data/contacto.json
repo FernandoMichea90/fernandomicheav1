@@ -17,6 +17,6 @@
     {
         "icono": "whatsapp-icon",
         "title": "+56 9 7622 6068",
-        "link": "https://api.whatsapp.com/send?phone=56976226068?text=Hola%20Fernando!"
+        "link": "https://api.whatsapp.com/send?phone=56976226068&text=Hola!%20Fernando"
     }
 ]

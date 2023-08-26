@@ -13,6 +13,7 @@ import { textGradient, bgGradient } from '@/theme/css';
 // routes
 // components
 import { MotionViewport, varFade } from '@/components/animate';
+import "../../utils-css-js/animacion.css"
 
 
 const HomePortafolio = () => {
@@ -21,8 +22,8 @@ const HomePortafolio = () => {
   const upMd = useResponsive('up', 'md');
 
   var test = varFade().inUp;
-  console.log(test);
 
+  const variantsTexto = varFade().in+" "+varFade().out
   
   
   const renderDescription = (
@@ -55,7 +56,7 @@ const HomePortafolio = () => {
     <Box
       component={motion.img}
       src={process.env.NEXT_PUBLIC_REACT_APP_BASE_PATH + "/assets/images/home/web/code-image.jpg"}
-      variants={varFade().in}
+      className='in-up'
       sx={{
         height: 1,
         width: 0.5,

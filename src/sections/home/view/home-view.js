@@ -57,9 +57,9 @@ export default function HomeView() {
           bgcolor: 'background.default',
         }}
       >
-        <Home_about />
+        <Home_about  />
         
-        <Box sx={{ position: 'relative',marginBottom:"100px" }}>
+        <Box id="portafolio" sx={{ position: 'relative',marginBottom:"100px" }}>
           <StyledPolygon />
           <HomePortafolio/>
           <StyledPolygon anchor="bottom" />
@@ -73,7 +73,8 @@ export default function HomeView() {
         }
 
 
-         <Contacto/>
+        <div id="contacto"></div>
+         <Contacto />
         
       </Box>
     </MainLayout>

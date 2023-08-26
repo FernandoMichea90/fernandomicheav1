@@ -20,7 +20,7 @@ const Home_about = () => {
 
     return (
         <Container
-        
+        id="sobremi"
           sx={{
             py: { xs: 10, md: 15 },
             textAlign: { xs: 'center', md: 'unset' },
