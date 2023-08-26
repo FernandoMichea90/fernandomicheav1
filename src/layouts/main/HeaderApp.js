@@ -71,6 +71,7 @@ export default function HeaderApp() {
 
                     </Box>
                     <Box sx={{ flexGrow: 1 }} />
+                    {mdUp &&
                     <Stack component="nav" direction="row" spacing={5} sx={{ mr: 2.5, height: 1 }}>
                         <Button href='#sobremi' sx={{ color: theme.palette.text.primary }}>
                             Sobre mi
@@ -84,6 +85,7 @@ export default function HeaderApp() {
                         </Button>
 
                     </Stack>
+                    }
                     <Stack alignItems="center" direction={{ xs: 'row', md: 'row-reverse' }}>
                         {/* {theme.palette.mode} mode */}
                         <IconButton sx={{ ml: 1 }} onClick={colorMode.toggleColorMode} color="inherit">

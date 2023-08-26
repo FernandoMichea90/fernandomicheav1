@@ -10,9 +10,9 @@ interface AnimationProps {
 
 export const varFade = (props?: AnimationProps) => {
   const distance = props?.distance || 120;
-  const durationIn = props?.durationIn;
+  const durationIn = props?.durationIn||0.5;
   const durationOut = props?.durationOut;
-  const easeIn = props?.easeIn;
+  const easeIn = props?.easeIn|| [0.43, 0.13, 0.23, 0.5];; // Curva de easing "ease-in"  ;
   const easeOut = props?.easeOut;
 
 
@@ -35,6 +35,14 @@ export const varFade = (props?: AnimationProps) => {
         opacity: 0,
         transition: varTranExit({ durationOut, easeOut }),
       },
+    },
+    inUpWhileView: {
+      initial: { y: distance, opacity: 1 },
+      whileInView: {
+        y: 0,
+        opacity: 1,
+        transition: { duration:0.5  , ease: [0.43, 0.13, 0.23, 0.5]},
+      }
     },
     inDown: {
       initial: { y: -distance, opacity: 0 },

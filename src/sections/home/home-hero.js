@@ -284,7 +284,16 @@ export default function HomeHero() {
 
         <Stack spacing={2} direction="row" justifyContent="center">
           {contacto.map((platform,key) => (
-            <motion.div key={key} variants={varFade().inUp}>
+            <motion.div key={key} 
+            initial={{ 
+              y:120,
+              opacity: 0 }}
+            whileInView={{
+               y: 0,
+              opacity: 1,
+              transition:{ duration:0.1+(key/2) , ease: [0.43, 0.13, 0.23, 0.5] },
+            }}
+            >
               <a href={platform.link} target='_blank'>
               <Box
                 component="img"
