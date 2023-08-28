@@ -233,7 +233,7 @@ export default function HomeHero() {
           <Stack alignItems="center" spacing={2}>
             <Button
               component={RouterLink}
-              href="/assets/cv/Curriculum.pdf"
+              href="/assets/cv/fernando_michea_cv.pdf"
               target="_blank"
               color="inherit"
               size="large"
